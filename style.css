@@ -140,6 +140,14 @@
     max-width: 680px;
     margin-bottom: 34px;
   }
+
+  .hero-slogan {
+    color: var(--dark-green);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: -6px;
+    margin-bottom: 16px;
+  }
   
   .hero-buttons {
     display: flex;
@@ -513,7 +521,7 @@
 
     .logo {
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     .menu-toggle {
