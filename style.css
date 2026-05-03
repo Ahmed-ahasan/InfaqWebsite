@@ -69,7 +69,7 @@
   }
 
   .menu-toggle {
-    display: none;
+    display: none !important;
     background: var(--dark-green);
     color: var(--white);
     border: none;
@@ -79,6 +79,7 @@
     font-size: 24px;
     line-height: 1;
     cursor: pointer;
+    margin-left: auto;
   }
   
   nav a {
@@ -455,9 +456,12 @@
   }
 
   .footer-brand-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    border-radius: 6px;
+    flex-shrink: 0;
     object-fit: cover;
   }
   
@@ -513,7 +517,9 @@
     }
 
     .menu-toggle {
-      display: block;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
       align-self: flex-end;
     }
   
