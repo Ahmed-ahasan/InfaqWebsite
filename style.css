@@ -67,6 +67,19 @@
     align-items: center;
     gap: 22px;
   }
+
+  .menu-toggle {
+    display: none;
+    background: var(--dark-green);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
   
   nav a {
     font-weight: 600;
@@ -434,6 +447,19 @@
   .supervisor-avatar {
     font-size: 26px;
   }
+
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
   
   footer {
     background: var(--dark-green);
@@ -476,12 +502,50 @@
   @media (max-width: 950px) {
     .navbar {
       flex-direction: column;
-      gap: 18px;
+      padding: 16px 6%;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .menu-toggle {
+      display: block;
+      align-self: flex-end;
     }
   
     nav {
-      flex-wrap: wrap;
-      justify-content: center;
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    nav.open {
+      display: flex;
+    }
+
+    nav a {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    nav a:hover {
+      background: rgba(154, 221, 158, 0.22);
+    }
+
+    .nav-button {
+      width: 100%;
+      text-align: center;
     }
   
     .hero {
@@ -523,6 +587,10 @@
     footer {
       flex-direction: column;
       text-align: center;
+    }
+
+    .footer-brand {
+      justify-content: center;
     }
   }
   

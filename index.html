@@ -14,7 +14,9 @@
       <span>INFAQ</span>
     </div>
 
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="main-nav" aria-expanded="false">☰</button>
+
+    <nav id="main-nav">
         <a href="#home">Home</a>
         <a href="#abstract">Project</a>
         <a href="#lifecycle">Design</a>
@@ -508,7 +510,10 @@
 
   <footer id="contact">
     <div>
-      <h2>INFAQ</h2>
+      <h2 class="footer-brand">
+        <img src="images/InfaqIcon.png" alt="INFAQ icon" class="footer-brand-icon" />
+        <span>INFAQ</span>
+      </h2>
       <p>AI-Powered Personal Finance Management Application</p>
     </div>
 
@@ -539,6 +544,27 @@
     heroImages.addEventListener('mouseleave', () => {
       heroScreens.forEach((screen) => {
         screen.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('#main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mainNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 950) {
+          mainNav.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.textContent = '☰';
+        }
       });
     });
   }
