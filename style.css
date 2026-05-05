@@ -490,6 +490,23 @@
   footer p {
     color: rgba(255, 255, 255, 0.8);
   }
+
+  footer a {
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  footer a:hover {
+    color: var(--white);
+  }
+
+  .team-card a {
+    color: var(--dark-green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
   
   /* Responsive */
   @media (max-width: 1150px) {
@@ -618,20 +635,29 @@
     }
   
     .hero-card {
-      min-height: 380px;
+      min-height: auto;
     }
 
     .hero-app-images {
-      min-height: 320px;
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
     }
 
     .hero-screen {
-      width: 58%;
+      position: static;
+      width: min(260px, 100%);
+      max-width: 100%;
     }
 
+    .hero-screen-main,
+    .hero-screen-subscriptions,
     .hero-screen-transactions {
-      left: 24px;
-      top: 164px;
+      top: auto;
+      left: auto;
+      right: auto;
     }
   
     .section-heading h2 {
