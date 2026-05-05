@@ -501,6 +501,19 @@
     color: var(--white);
   }
 
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-social-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
   .team-card a {
     color: var(--dark-green);
     text-decoration: underline;
