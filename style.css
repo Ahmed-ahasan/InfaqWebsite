@@ -844,6 +844,10 @@
 
 .demo-video {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  display: block;
   border-radius: 18px;
   margin-bottom: 18px;
   border: 1px solid var(--border);
