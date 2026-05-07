@@ -409,6 +409,11 @@
   .tool-card {
     text-align: center;
   }
+
+  a.tool-card {
+    text-decoration: none;
+    color: inherit;
+  }
   
   .tool-icon {
     width: 82px;
