@@ -1,9 +1,67 @@
 (function () {
   'use strict';
 
+  var LANG_KEY = 'infaq-lang';
   var prefersReducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
+
+  function getLang() {
+    var stored = localStorage.getItem(LANG_KEY);
+    return stored === 'ar' ? 'ar' : 'en';
+  }
+
+  function applyLanguage(lang) {
+    var dict = window.INFAQ_I18N && window.INFAQ_I18N[lang];
+    if (!dict) return;
+
+    document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = dict['meta.title'] || 'INFAQ';
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-alt');
+      if (dict[key] !== undefined) el.setAttribute('alt', dict[key]);
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+
+    var toggle = document.getElementById('lang-toggle');
+    if (toggle) {
+      toggle.textContent = lang === 'ar' ? 'English' : '\u0627\u0644\u0639\u0631\u0628\u064a\u0629';
+      toggle.setAttribute(
+        'data-i18n-aria',
+        lang === 'ar' ? 'lang.switchToEn' : 'lang.switchToAr'
+      );
+      toggle.setAttribute(
+        'aria-label',
+        dict[lang === 'ar' ? 'lang.switchToEn' : 'lang.switchToAr']
+      );
+    }
+  }
+
+  function initI18n() {
+    if (!window.INFAQ_I18N) return;
+
+    applyLanguage(getLang());
+
+    var toggle = document.getElementById('lang-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var next = getLang() === 'ar' ? 'en' : 'ar';
+        localStorage.setItem(LANG_KEY, next);
+        applyLanguage(next);
+      });
+    }
+  }
 
   function initMenu() {
     var menuToggle = document.querySelector('.menu-toggle');
@@ -16,7 +74,7 @@
       menuToggle.textContent = isOpen ? '✕' : '☰';
     });
 
-    mainNav.querySelectorAll('a').forEach(function (link) {
+    mainNav.querySelectorAll('a, #lang-toggle').forEach(function (link) {
       link.addEventListener('click', function () {
         if (window.innerWidth <= 950) {
           mainNav.classList.remove('open');
@@ -179,6 +237,7 @@
     update();
   }
 
+  initI18n();
   initMenu();
   initHeroMouseTilt();
   initScrollReveal();

@@ -6,8 +6,15 @@
   <title>INFAQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var lang = localStorage.getItem('infaq-lang') || 'en';
+      document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
   <script>
     document.documentElement.classList.add('js', 'js-reveal');
   </script>
@@ -16,18 +23,19 @@
 
   <header class="navbar glass-navbar">
     <div class="logo">
-      <img src="images/InfaqIcon.png" alt="INFAQ logo" class="logo-icon" />
+      <img src="images/InfaqIcon.png" alt="INFAQ logo" class="logo-icon" data-i18n-alt="hero.altLogo" />
       <span>INFAQ</span>
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="main-nav" aria-expanded="false">☰</button>
+      <button class="menu-toggle" type="button" data-i18n-aria="nav.menuToggle" aria-label="Toggle navigation menu" aria-controls="main-nav" aria-expanded="false">☰</button>
     </div>
 
     <nav id="main-nav">
-        <a href="#home">Home</a>
-        <a href="#abstract">Project</a>
-        <a href="#lifecycle">Design</a>
-        <a href="#demo">Demo</a>
-        <a href="#team">Team</a>
-        <a href="#contact" class="nav-button">Contact</a>
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#abstract" data-i18n="nav.project">Project</a>
+        <a href="#lifecycle" data-i18n="nav.design">Design</a>
+        <a href="#demo" data-i18n="nav.demo">Demo</a>
+        <a href="#team" data-i18n="nav.team">Team</a>
+        <button type="button" id="lang-toggle" class="lang-toggle" data-i18n-aria="lang.switchToAr" aria-label="Switch to Arabic">العربية</button>
+        <a href="#contact" class="nav-button" data-i18n="nav.contact">Contact</a>
       </nav>
   </header>
 
@@ -42,33 +50,33 @@
       </div>
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="tag hero-entrance hero-entrance-1">Senior Project Website</div>
+          <div class="tag hero-entrance hero-entrance-1" data-i18n="hero.tag">Senior Project Website</div>
 
-          <h1 class="hero-entrance hero-entrance-2">INFAQ: AI-Powered Personal Finance Management</h1>
-          <p class="hero-slogan hero-entrance hero-entrance-3">Build better money habits today.</p>
+          <h1 class="hero-entrance hero-entrance-2" data-i18n="hero.title">INFAQ: AI-Powered Personal Finance Management</h1>
+          <p class="hero-slogan hero-entrance hero-entrance-3" data-i18n="hero.slogan">Build better money habits today.</p>
 
-          <p class="hero-entrance hero-entrance-4">
+          <p class="hero-entrance hero-entrance-4" data-i18n="hero.desc">
             INFAQ is a smart personal finance management application designed to help users
             track expenses, manage budgets, understand spending habits, and receive
             AI-powered financial insights in a simple and user-friendly way.
           </p>
 
           <div class="hero-buttons hero-entrance hero-entrance-5">
-            <a href="#demo" class="primary-btn">View Demo</a>
-            <a href="#abstract" class="secondary-btn">Learn More</a>
+            <a href="#demo" class="primary-btn" data-i18n="hero.viewDemo">View Demo</a>
+            <a href="#abstract" class="secondary-btn" data-i18n="hero.learnMore">Learn More</a>
           </div>
         </div>
-        <aside class="hero-visual" aria-label="INFAQ app preview">
+        <aside class="hero-visual" data-i18n-aria="hero.previewLabel" aria-label="INFAQ app preview">
           <div class="hero-card hero-card-free hero-phone-stack hero-entrance hero-entrance-6">
             <div class="hero-app-images">
               <div class="hero-screen-wrap hero-screen-main">
-                <img src="images/MainPage.jpeg" alt="INFAQ main page screen" class="hero-screen" />
+                <img src="images/MainPage.jpeg" alt="INFAQ main page screen" class="hero-screen" data-i18n-alt="hero.altMain" />
               </div>
               <div class="hero-screen-wrap hero-screen-subscriptions">
-                <img src="images/Subscriptions.jpeg" alt="INFAQ subscriptions screen" class="hero-screen" />
+                <img src="images/Subscriptions.jpeg" alt="INFAQ subscriptions screen" class="hero-screen" data-i18n-alt="hero.altSubscriptions" />
               </div>
               <div class="hero-screen-wrap hero-screen-transactions">
-                <img src="images/Transactions.jpeg" alt="INFAQ transactions screen" class="hero-screen" />
+                <img src="images/Transactions.jpeg" alt="INFAQ transactions screen" class="hero-screen" data-i18n-alt="hero.altTransactions" />
               </div>
             </div>
           </div>
@@ -78,8 +86,8 @@
 
     <section id="abstract" class="section">
       <div class="section-heading reveal">
-        <h2>Abstract</h2>
-        <p>
+        <h2 data-i18n="abstract.title">Abstract</h2>
+        <p data-i18n="abstract.body">
           INFAQ is an AI-powered personal finance management application developed to help
           users manage their financial activities more effectively. The application focuses
           on simplifying expense tracking, improving spending awareness, supporting budget
@@ -93,8 +101,8 @@
 
     <section id="objectives" class="section soft-bg">
       <div class="section-heading reveal">
-        <h2>Project Objectives</h2>
-        <p>
+        <h2 data-i18n="objectives.title">Project Objectives</h2>
+        <p data-i18n="objectives.intro">
           The main objectives of INFAQ are focused on improving personal finance management
           through automation, intelligent analysis, and user-friendly design.
         </p>
@@ -103,46 +111,46 @@
       <div class="cards reveal-stagger">
         <div class="card reveal-item">
           <div class="icon">📌</div>
-          <h3>Track Expenses</h3>
-          <p>Provide users with a simple way to record, organize, and view their daily expenses.</p>
+          <h3 data-i18n="objectives.track.title">Track Expenses</h3>
+          <p data-i18n="objectives.track.body">Provide users with a simple way to record, organize, and view their daily expenses.</p>
         </div>
 
         <div class="card reveal-item">
           <div class="icon">📊</div>
-          <h3>Improve Awareness</h3>
-          <p>Help users understand their spending habits through summaries, categories, and reports.</p>
+          <h3 data-i18n="objectives.awareness.title">Improve Awareness</h3>
+          <p data-i18n="objectives.awareness.body">Help users understand their spending habits through summaries, categories, and reports.</p>
         </div>
 
         <div class="card reveal-item">
           <div class="icon">🤖</div>
-          <h3>Use AI Insights</h3>
-          <p>Generate personalized financial insights and suggestions based on user spending behavior.</p>
+          <h3 data-i18n="objectives.ai.title">Use AI Insights</h3>
+          <p data-i18n="objectives.ai.body">Generate personalized financial insights and suggestions based on user spending behavior.</p>
         </div>
 
         <div class="card reveal-item">
           <div class="icon">🎯</div>
-          <h3>Support Budgeting</h3>
-          <p>Allow users to set budgets, monitor progress, and manage financial goals more clearly.</p>
+          <h3 data-i18n="objectives.budget.title">Support Budgeting</h3>
+          <p data-i18n="objectives.budget.body">Allow users to set budgets, monitor progress, and manage financial goals more clearly.</p>
         </div>
 
         <div class="card reveal-item">
           <div class="icon">🌱</div>
-          <h3>Encourage Sustainability</h3>
-          <p>Promote mindful spending by connecting personal finance decisions with sustainability awareness.</p>
+          <h3 data-i18n="objectives.sustain.title">Encourage Sustainability</h3>
+          <p data-i18n="objectives.sustain.body">Promote mindful spending by connecting personal finance decisions with sustainability awareness.</p>
         </div>
 
         <div class="card reveal-item">
           <div class="icon">📱</div>
-          <h3>Build a User-Friendly App</h3>
-          <p>Design a mobile application that is easy to use, visually clear, and suitable for everyday users.</p>
+          <h3 data-i18n="objectives.ux.title">Build a User-Friendly App</h3>
+          <p data-i18n="objectives.ux.body">Design a mobile application that is easy to use, visually clear, and suitable for everyday users.</p>
         </div>
       </div>
     </section>
 
     <section id="methodology" class="section section-glow">
       <div class="section-heading reveal">
-        <h2>Methodology</h2>
-        <p>
+        <h2 data-i18n="methodology.title">Methodology</h2>
+        <p data-i18n="methodology.intro">
           The development of INFAQ follows a structured process that includes research,
           design, implementation, testing, and evaluation.
         </p>
@@ -151,8 +159,8 @@
       <div class="design-grid reveal-stagger">
         <div class="design-step reveal-item">
           <span>01</span>
-          <h3>Research</h3>
-          <p>
+          <h3 data-i18n="methodology.research.title">Research</h3>
+          <p data-i18n="methodology.research.body">
             Studied personal finance challenges, existing finance apps, user needs,
             and AI-based financial management solutions.
           </p>
@@ -160,8 +168,8 @@
 
         <div class="design-step reveal-item">
           <span>02</span>
-          <h3>Design</h3>
-          <p>
+          <h3 data-i18n="methodology.design.title">Design</h3>
+          <p data-i18n="methodology.design.body">
             Designed the mobile app interface, database structure, authentication flow,
             and AI insight workflow.
           </p>
@@ -169,8 +177,8 @@
 
         <div class="design-step reveal-item">
           <span>03</span>
-          <h3>Development</h3>
-          <p>
+          <h3 data-i18n="methodology.dev.title">Development</h3>
+          <p data-i18n="methodology.dev.body">
             Built the application using Flutter, Supabase, Edge Functions, and Gemini API
             integration for financial insight generation.
           </p>
@@ -178,8 +186,8 @@
 
         <div class="design-step reveal-item">
           <span>04</span>
-          <h3>Testing</h3>
-          <p>
+          <h3 data-i18n="methodology.test.title">Testing</h3>
+          <p data-i18n="methodology.test.body">
             Tested usability, functionality, data handling, and the quality of generated
             financial insights.
           </p>
@@ -189,60 +197,60 @@
 
     <section id="lifecycle" class="section soft-bg">
       <div class="section-heading reveal">
-        <h2>Agile Project Lifecycle</h2>
-        <p>
+        <h2 data-i18n="lifecycle.title">Agile Project Lifecycle</h2>
+        <p data-i18n="lifecycle.intro">
           INFAQ follows an Agile development lifecycle, allowing the project to be improved
           through repeated planning, design, development, testing, and feedback cycles.
         </p>
       </div>
 
       <div class="image-display reveal" data-parallax-img="14">
-        <img src="images/LifeCycle.png" alt="Agile lifecycle diagram for INFAQ" />
+        <img src="images/LifeCycle.png" alt="Agile lifecycle diagram for INFAQ" data-i18n-alt="lifecycle.alt" />
       </div>
 
       <div class="lifecycle-grid reveal-stagger">
         <div class="lifecycle-step reveal-item">
           <span>01</span>
-          <h3>Plan</h3>
-          <p>Define requirements, project scope, features, and priorities.</p>
+          <h3 data-i18n="lifecycle.plan.title">Plan</h3>
+          <p data-i18n="lifecycle.plan.body">Define requirements, project scope, features, and priorities.</p>
         </div>
 
         <div class="lifecycle-step reveal-item">
           <span>02</span>
-          <h3>Design</h3>
-          <p>Create interface layouts, system structure, and database planning.</p>
+          <h3 data-i18n="lifecycle.design.title">Design</h3>
+          <p data-i18n="lifecycle.design.body">Create interface layouts, system structure, and database planning.</p>
         </div>
 
         <div class="lifecycle-step reveal-item">
           <span>03</span>
-          <h3>Develop</h3>
-          <p>Implement app screens, backend services, database features, and AI logic.</p>
+          <h3 data-i18n="lifecycle.develop.title">Develop</h3>
+          <p data-i18n="lifecycle.develop.body">Implement app screens, backend services, database features, and AI logic.</p>
         </div>
 
         <div class="lifecycle-step reveal-item">
           <span>04</span>
-          <h3>Test</h3>
-          <p>Check functionality, usability, performance, and AI response quality.</p>
+          <h3 data-i18n="lifecycle.test.title">Test</h3>
+          <p data-i18n="lifecycle.test.body">Check functionality, usability, performance, and AI response quality.</p>
         </div>
 
         <div class="lifecycle-step reveal-item">
           <span>05</span>
-          <h3>Deploy</h3>
-          <p>Release the app to users and monitor initial usage.</p>
+          <h3 data-i18n="lifecycle.deploy.title">Deploy</h3>
+          <p data-i18n="lifecycle.deploy.body">Release the app to users and monitor initial usage.</p>
         </div>
 
         <div class="lifecycle-step reveal-item">
           <span>06</span>
-          <h3>Review</h3>
-          <p>Collect feedback, identify improvements, and refine the application.</p>
+          <h3 data-i18n="lifecycle.review.title">Review</h3>
+          <p data-i18n="lifecycle.review.body">Collect feedback, identify improvements, and refine the application.</p>
         </div>
       </div>
     </section>
 
     <section id="about" class="section section-glow">
       <div class="section-heading reveal">
-        <h2>Project Purpose</h2>
-        <p>
+        <h2 data-i18n="purpose.title">Project Purpose</h2>
+        <p data-i18n="purpose.intro">
           INFAQ was developed to address the difficulty many users face in consistently
           tracking expenses and understanding their financial habits. The project aims
           to make personal finance management easier, smarter, and more accessible
@@ -253,8 +261,8 @@
       <div class="cards reveal-stagger">
         <div class="card reveal-item">
           <div class="icon">⏱️</div>
-          <h3>Reduce Manual Effort</h3>
-          <p>
+          <h3 data-i18n="purpose.manual.title">Reduce Manual Effort</h3>
+          <p data-i18n="purpose.manual.body">
             INFAQ simplifies the process of recording and organizing expenses, helping
             users spend less time managing financial data manually.
           </p>
@@ -262,8 +270,8 @@
 
         <div class="card reveal-item">
           <div class="icon">👁️</div>
-          <h3>Improve Awareness</h3>
-          <p>
+          <h3 data-i18n="purpose.awareness.title">Improve Awareness</h3>
+          <p data-i18n="purpose.awareness.body">
             The app helps users understand where their money goes by presenting
             spending patterns, categories, and summaries in a clear way.
           </p>
@@ -271,8 +279,8 @@
 
         <div class="card reveal-item">
           <div class="icon">💡</div>
-          <h3>Support Better Decisions</h3>
-          <p>
+          <h3 data-i18n="purpose.decisions.title">Support Better Decisions</h3>
+          <p data-i18n="purpose.decisions.body">
             Through intelligent insights, INFAQ helps users make more informed
             budgeting and spending decisions.
           </p>
@@ -282,125 +290,125 @@
 
     <section id="architecture" class="section section-demo-dark">
       <div class="section-heading reveal">
-        <h2>System Architecture</h2>
-        <p>
+        <h2 data-i18n="architecture.title">System Architecture</h2>
+        <p data-i18n="architecture.intro">
           The architecture of INFAQ connects the mobile interface, Supabase backend services,
           database, and Gemini AI engine to provide a complete personal finance management system.
         </p>
       </div>
 
       <div class="image-display architecture-display reveal" data-parallax-img="10">
-        <img src="images/arch.png" alt="INFAQ system architecture diagram" />
+        <img src="images/arch.png" alt="INFAQ system architecture diagram" data-i18n-alt="architecture.alt" />
       </div>
 
       <div class="architecture-flow reveal-stagger">
         <div class="architecture-box reveal-item">
-          <h3>Frontend</h3>
-          <p>Flutter mobile app used by the user to manage expenses, budgets, goals, and insights.</p>
+          <h3 data-i18n="architecture.frontend.title">Frontend</h3>
+          <p data-i18n="architecture.frontend.body">Flutter mobile app used by the user to manage expenses, budgets, goals, and insights.</p>
         </div>
 
         <div class="architecture-connector reveal-item" aria-hidden="true"></div>
 
         <div class="architecture-box reveal-item">
-          <h3>Backend API</h3>
-          <p>Supabase Edge Functions handle secure server-side logic, AI requests, and service-to-service communication.</p>
+          <h3 data-i18n="architecture.api.title">Backend API</h3>
+          <p data-i18n="architecture.api.body">Supabase Edge Functions handle secure server-side logic, AI requests, and service-to-service communication.</p>
         </div>
 
         <div class="architecture-connector reveal-item" aria-hidden="true"></div>
 
         <div class="architecture-box reveal-item">
-          <h3>Database & Authentication</h3>
-          <p>Supabase and PostgreSQL manage user accounts, transactions, categories, and budgets.</p>
+          <h3 data-i18n="architecture.db.title">Database & Authentication</h3>
+          <p data-i18n="architecture.db.body">Supabase and PostgreSQL manage user accounts, transactions, categories, and budgets.</p>
         </div>
 
         <div class="architecture-connector reveal-item" aria-hidden="true"></div>
 
         <div class="architecture-box reveal-item">
-          <h3>AI Insight Engine</h3>
-          <p>Gemini API powers AI-driven financial insights, categorization, and personalized recommendations.</p>
+          <h3 data-i18n="architecture.ai.title">AI Insight Engine</h3>
+          <p data-i18n="architecture.ai.body">Gemini API powers AI-driven financial insights, categorization, and personalized recommendations.</p>
         </div>
       </div>
     </section>
 
     <section id="tools" class="section section-glow">
       <div class="section-heading reveal">
-        <h2>Tools and Technologies Used</h2>
-        <p>
+        <h2 data-i18n="tools.title">Tools and Technologies Used</h2>
+        <p data-i18n="tools.intro">
           The project uses a combination of tools for frontend development, backend services,
           database management, AI processing, cloud functions, design, and collaboration.
         </p>
       </div>
 
       <div class="tool-category">
-        <h3 class="reveal">Frontend & UI Design</h3>
+        <h3 class="reveal" data-i18n="tools.frontendCat">Frontend & UI Design</h3>
         <div class="tools-grid reveal-stagger">
           <a class="tool-card reveal-item" href="https://flutter.dev" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Flutter.png" alt="Flutter logo" /></div>
-            <h4>Flutter</h4>
-            <p>Used to build the mobile application interface.</p>
+            <h4 data-i18n="tools.flutter">Flutter</h4>
+            <p data-i18n="tools.flutter.body">Used to build the mobile application interface.</p>
           </a>
 
           <a class="tool-card reveal-item" href="https://dart.dev" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Dart.webp" alt="Dart logo" /></div>
-            <h4>Dart</h4>
-            <p>The programming language used for Flutter development.</p>
+            <h4 data-i18n="tools.dart">Dart</h4>
+            <p data-i18n="tools.dart.body">The programming language used for Flutter development.</p>
           </a>
 
           <a class="tool-card reveal-item" href="https://www.figma.com" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Figma.png" alt="Figma logo" /></div>
-            <h4>Figma</h4>
-            <p>Used for UI design, wireframes, and interface planning.</p>
+            <h4 data-i18n="tools.figma">Figma</h4>
+            <p data-i18n="tools.figma.body">Used for UI design, wireframes, and interface planning.</p>
           </a>
         </div>
       </div>
 
       <div class="tool-category">
-        <h3 class="reveal">Backend & API</h3>
+        <h3 class="reveal" data-i18n="tools.backendCat">Backend & API</h3>
         <div class="tools-grid reveal-stagger">
           <a class="tool-card reveal-item" href="https://www.typescriptlang.org" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Typescript.png" alt="TypeScript logo" /></div>
-            <h4>TypeScript</h4>
-            <p>Used to implement Supabase Edge Functions and server-side integration logic.</p>
+            <h4 data-i18n="tools.typescript">TypeScript</h4>
+            <p data-i18n="tools.typescript.body">Used to implement Supabase Edge Functions and server-side integration logic.</p>
           </a>
 
           <a class="tool-card reveal-item" href="https://supabase.com/docs/guides/functions" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Supabase.webp" alt="Supabase Edge Functions logo" /></div>
-            <h4>Supabase Edge Functions</h4>
-            <p>Used to run secure server-side logic and connect the app with external APIs.</p>
+            <h4 data-i18n="tools.edge">Supabase Edge Functions</h4>
+            <p data-i18n="tools.edge.body">Used to run secure server-side logic and connect the app with external APIs.</p>
           </a>
         </div>
       </div>
 
       <div class="tool-category">
-        <h3 class="reveal">Database & Authentication</h3>
+        <h3 class="reveal" data-i18n="tools.dbCat">Database & Authentication</h3>
         <div class="tools-grid reveal-stagger">
           <a class="tool-card reveal-item" href="https://supabase.com" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Supabase.webp" alt="Supabase logo" /></div>
-            <h4>Supabase</h4>
-            <p>Used for authentication, database services, and user data management.</p>
+            <h4 data-i18n="tools.supabase">Supabase</h4>
+            <p data-i18n="tools.supabase.body">Used for authentication, database services, and user data management.</p>
           </a>
 
           <a class="tool-card reveal-item" href="https://www.postgresql.org" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/PostgreSQL.png" alt="PostgreSQL logo" /></div>
-            <h4>PostgreSQL</h4>
-            <p>Used as the relational database system behind Supabase.</p>
+            <h4 data-i18n="tools.postgres">PostgreSQL</h4>
+            <p data-i18n="tools.postgres.body">Used as the relational database system behind Supabase.</p>
           </a>
         </div>
       </div>
 
       <div class="tool-category">
-        <h3 class="reveal">AI & Collaboration</h3>
+        <h3 class="reveal" data-i18n="tools.aiCat">AI & Collaboration</h3>
         <div class="tools-grid reveal-stagger">
           <a class="tool-card reveal-item" href="https://ai.google.dev/gemini-api" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Gemini.png" alt="Gemini logo" /></div>
-            <h4>Gemini API</h4>
-            <p>Used to generate AI-powered financial insights and personalized recommendations.</p>
+            <h4 data-i18n="tools.gemini">Gemini API</h4>
+            <p data-i18n="tools.gemini.body">Used to generate AI-powered financial insights and personalized recommendations.</p>
           </a>
 
           <a class="tool-card reveal-item" href="https://github.com" target="_blank" rel="noopener noreferrer">
             <div class="tool-icon"><img src="images/Tools/Github.png" alt="GitHub logo" /></div>
-            <h4>GitHub</h4>
-            <p>Used for version control, collaboration, code management, and website publishing.</p>
+            <h4 data-i18n="tools.github">GitHub</h4>
+            <p data-i18n="tools.github.body">Used for version control, collaboration, code management, and website publishing.</p>
           </a>
         </div>
       </div>
@@ -408,8 +416,8 @@
 
     <section id="features" class="section soft-bg">
       <div class="section-heading reveal">
-        <h2>Key Features</h2>
-        <p>
+        <h2 data-i18n="features.title">Key Features</h2>
+        <p data-i18n="features.intro">
           INFAQ includes practical features that help users track, analyze, and improve
           their personal financial habits.
         </p>
@@ -417,31 +425,31 @@
 
       <div class="feature-strip reveal-stagger">
         <div class="reveal-item">
-          <strong>Transaction Categories</strong>
-          <p>Automatically or manually organizes expenses into clear categories.</p>
+          <strong data-i18n="features.categories.title">Transaction Categories</strong>
+          <p data-i18n="features.categories.body">Automatically or manually organizes expenses into clear categories.</p>
         </div>
 
         <div class="reveal-item">
-          <strong>Budget Tracking</strong>
-          <p>Allows users to set budgets and monitor progress over time.</p>
+          <strong data-i18n="features.budget.title">Budget Tracking</strong>
+          <p data-i18n="features.budget.body">Allows users to set budgets and monitor progress over time.</p>
         </div>
 
         <div class="reveal-item">
-          <strong>Personalized Insights</strong>
-          <p>Generates helpful financial suggestions based on user spending behavior.</p>
+          <strong data-i18n="features.insights.title">Personalized Insights</strong>
+          <p data-i18n="features.insights.body">Generates helpful financial suggestions based on user spending behavior.</p>
         </div>
 
         <div class="reveal-item">
-          <strong>Goals & Sustainability</strong>
-          <p>Supports saving goals and encourages more mindful spending choices.</p>
+          <strong data-i18n="features.goals.title">Goals & Sustainability</strong>
+          <p data-i18n="features.goals.body">Supports saving goals and encourages more mindful spending choices.</p>
         </div>
       </div>
     </section>
 
     <section id="demo" class="section section-demo-dark">
       <div class="section-heading reveal">
-        <h2>Demo and Project Presentation</h2>
-        <p>
+        <h2 data-i18n="demo.title">Demo and Project Presentation</h2>
+        <p data-i18n="demo.intro">
           This section provides access to the INFAQ application demo and project pitch videos.
         </p>
       </div>
@@ -451,41 +459,41 @@
           <div class="demo-video-wrap">
           <video controls preload="metadata" class="demo-video">
             <source src="videos/AppDemo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            <span data-i18n="demo.videoUnsupported">Your browser does not support the video tag.</span>
           </video>
           </div>
-          <h3>App Demo</h3>
-          <p>Main INFAQ application walkthrough showing core features and user flow.</p>
+          <h3 data-i18n="demo.app.title">App Demo</h3>
+          <p data-i18n="demo.app.body">Main INFAQ application walkthrough showing core features and user flow.</p>
         </div>
 
         <div class="demo-card reveal-item">
           <div class="demo-video-wrap">
           <video controls preload="metadata" class="demo-video">
             <source src="videos/EnglishPitch.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            <span data-i18n="demo.videoUnsupported">Your browser does not support the video tag.</span>
           </video>
           </div>
-          <h3>English Pitch</h3>
-          <p>Project pitch in English covering problem, solution, and impact.</p>
+          <h3 data-i18n="demo.en.title">English Pitch</h3>
+          <p data-i18n="demo.en.body">Project pitch in English covering problem, solution, and impact.</p>
         </div>
 
         <div class="demo-card reveal-item">
           <div class="demo-video-wrap">
           <video controls preload="metadata" class="demo-video">
             <source src="videos/ArabicPitch.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            <span data-i18n="demo.videoUnsupported">Your browser does not support the video tag.</span>
           </video>
           </div>
-          <h3>Arabic Pitch</h3>
-          <p>Project pitch in Arabic for local evaluators, students, and visitors.</p>
+          <h3 data-i18n="demo.ar.title">Arabic Pitch</h3>
+          <p data-i18n="demo.ar.body">Project pitch in Arabic for local evaluators, students, and visitors.</p>
         </div>
       </div>
     </section>
 
     <section id="team" class="section soft-bg">
       <div class="section-heading reveal">
-        <h2>Project Team</h2>
-        <p>
+        <h2 data-i18n="team.title">Project Team</h2>
+        <p data-i18n="team.intro">
           INFAQ was developed as a senior project by students from the University of Bahrain.
         </p>
       </div>
@@ -493,8 +501,8 @@
       <div class="supervisor-card reveal">
         <div class="avatar supervisor-avatar">Dr</div>
         <div>
-          <h3>Dr. Amal Shaheen</h3>
-          <p>Project Supervisor</p>
+          <h3 data-i18n="team.supervisor">Dr. Amal Shaheen</h3>
+          <p data-i18n="team.supervisorRole">Project Supervisor</p>
         </div>
       </div>
 
@@ -502,27 +510,27 @@
         <div class="team-card reveal-item">
           <div class="avatar">A</div>
           <h3>Ahmed Abdulhasan</h3>
-          <p>Student ID: 202205376</p>
-          <p>Email: <a href="mailto:ahmed.ahasan.mohsin@gmail.com">ahmed.ahasan.mohsin@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/ahmed-abdulhasan/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><span data-i18n="team.studentId">Student ID:</span> 202205376</p>
+          <p><span data-i18n="team.email">Email:</span> <a href="mailto:ahmed.ahasan.mohsin@gmail.com">ahmed.ahasan.mohsin@gmail.com</a></p>
+          <p><a href="https://www.linkedin.com/in/ahmed-abdulhasan/" target="_blank" rel="noopener noreferrer" data-i18n="team.linkedin">LinkedIn</a></p>
           <!-- <p><a href="CVs/CVplaceholder.pdf" target="_blank" rel="noopener noreferrer">CV</a></p> -->
         </div>
 
         <div class="team-card reveal-item">
           <div class="avatar">M</div>
           <h3>Mohammed Essam</h3>
-          <p>Student ID: 202210718</p>
-          <p>Email: <a href="mailto:unimohammedessam@gmail.com">unimohammedessam@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/mohammed-essam-b35bb32a1/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><span data-i18n="team.studentId">Student ID:</span> 202210718</p>
+          <p><span data-i18n="team.email">Email:</span> <a href="mailto:unimohammedessam@gmail.com">unimohammedessam@gmail.com</a></p>
+          <p><a href="https://www.linkedin.com/in/mohammed-essam-b35bb32a1/" target="_blank" rel="noopener noreferrer" data-i18n="team.linkedin">LinkedIn</a></p>
           <!-- <p><a href="CVs/CVplaceholder.pdf" target="_blank" rel="noopener noreferrer">CV</a></p> -->
         </div>
 
         <div class="team-card reveal-item">
           <div class="avatar">H</div>
           <h3>Hassan Alaradi</h3>
-          <p>Student ID: 202208051</p>
-          <p>Email: <a href="mailto:halaradi14@gmail.com">halaradi14@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/hassan-alaradi-050819279/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><span data-i18n="team.studentId">Student ID:</span> 202208051</p>
+          <p><span data-i18n="team.email">Email:</span> <a href="mailto:halaradi14@gmail.com">halaradi14@gmail.com</a></p>
+          <p><a href="https://www.linkedin.com/in/hassan-alaradi-050819279/" target="_blank" rel="noopener noreferrer" data-i18n="team.linkedin">LinkedIn</a></p>
           <!-- <p><a href="CVs/CVplaceholder.pdf" target="_blank" rel="noopener noreferrer">CV</a></p> -->
         </div>
       </div>
@@ -530,8 +538,8 @@
 
     <section id="conclusion" class="section section-glow">
       <div class="section-heading reveal">
-        <h2>Conclusion</h2>
-        <p>
+        <h2 data-i18n="conclusion.title">Conclusion</h2>
+        <p data-i18n="conclusion.body">
           INFAQ aims to provide a practical and intelligent solution for personal finance
           management by combining expense tracking, budgeting, AI-powered insights, and
           sustainability awareness. Through its mobile-first design, Supabase-powered backend,
@@ -547,22 +555,23 @@
   <footer id="contact" class="footer-reveal reveal">
     <div>
       <h2 class="footer-brand">
-        <img src="images/InfaqIcon.png" alt="INFAQ icon" class="footer-brand-icon" />
+        <img src="images/InfaqIcon.png" alt="INFAQ icon" class="footer-brand-icon" data-i18n-alt="footer.altIcon" />
         <span>INFAQ</span>
       </h2>
-      <p>AI-Powered Personal Finance Management Application</p>
+      <p data-i18n="footer.tagline">AI-Powered Personal Finance Management Application</p>
     </div>
 
     <div>
-      <p>Email: <a href="mailto:contact@infaqbh.com">contact@infaqbh.com</a></p>
+      <p><span data-i18n="footer.email">Email:</span> <a href="mailto:contact@infaqbh.com">contact@infaqbh.com</a></p>
       <p class="footer-social-link">
         <img src="images/Tools/Instagram.png" alt="Instagram icon" class="footer-social-icon" />
         <a href="https://www.instagram.com/infaq.bh/" target="_blank" rel="noopener noreferrer">@infaq.bh</a>
       </p>
-      <p>University of Bahrain</p>
+      <p data-i18n="footer.university">University of Bahrain</p>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="site.js" defer></script>
 </body>
 </html>
