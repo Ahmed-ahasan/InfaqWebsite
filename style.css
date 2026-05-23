@@ -269,6 +269,17 @@ button:focus-visible,
   color: var(--infaq-forest);
 }
 
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-brand > span,
+.footer-brand > span {
+  font-family: var(--font);
+}
+
 .logo-icon {
   width: 42px;
   height: 42px;
@@ -298,7 +309,7 @@ nav {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  margin-left: auto;
+  margin-inline-start: auto;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -383,6 +394,10 @@ nav a:hover {
   justify-content: flex-start;
 }
 
+[dir="rtl"] nav {
+  justify-content: flex-start;
+}
+
 [dir="rtl"] .nav-button {
   margin-left: 0;
   margin-right: 4px;
@@ -413,6 +428,20 @@ nav a:hover {
 
   [dir="rtl"] .nav-button {
     margin-right: 0;
+  }
+
+  [dir="rtl"] .logo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  [dir="rtl"] nav {
+    align-items: stretch;
+  }
+
+  [dir="rtl"] nav a,
+  [dir="rtl"] .lang-toggle {
+    text-align: start;
   }
 }
 
@@ -1686,7 +1715,7 @@ footer .footer-social-link .footer-social-icon {
 
   .logo {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   .menu-toggle {
