@@ -175,6 +175,7 @@ window.INFAQ_I18N = {
     'team.studentId': 'Student ID:',
     'team.email': 'Email:',
     'team.linkedin': 'LinkedIn',
+    'team.cv': 'CV',
     'conclusion.title': 'Conclusion',
     'conclusion.body':
       'INFAQ aims to provide a practical and intelligent solution for personal finance management by combining expense tracking, budgeting, AI-powered insights, and sustainability awareness. Through its mobile-first design, Supabase-powered backend, and Gemini-based intelligence, the project offers a foundation for a smarter and more personalized financial management experience. Future improvements may include deeper banking integration, advanced personalization, expanded analytics, and enhanced automation.',
@@ -359,6 +360,7 @@ window.INFAQ_I18N = {
     'team.studentId': 'الرقم الجامعي:',
     'team.email': 'البريد الإلكتروني:',
     'team.linkedin': 'لينكدإن',
+    'team.cv': 'السيرة الذاتية',
     'conclusion.title': 'الخاتمة',
     'conclusion.body':
       'يهدف إنفاق إلى تقديم حل عملي وذكي لإدارة المالية الشخصية من خلال الجمع بين تتبع المصروفات والميزانية والرؤى المدعومة بالذكاء الاصطناعي والوعي بالاستدامة. من خلال تصميمه الموجّه للجوال وخلفية Supabase وذكاء Gemini، يوفّر المشروع أساساً لتجربة إدارة مالية أذكى وأكثر تخصيصاً. قد تشمل التحسينات المستقبلية تكاملاً أعمق مع البنوك وتخصيصاً متقدماً وتحليلات موسّعة وأتمتة محسّنة.',
